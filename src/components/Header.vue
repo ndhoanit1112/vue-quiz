@@ -1,6 +1,10 @@
 <template lang="">
-  <div>
-    Header {{ total }}
+  <div class="pt-5 bg-pink">
+    <b-nav tabs>
+      <b-nav-item disabled><b>Vue Quiz App</b></b-nav-item>
+      <b-nav-item disabled>Counter: {{ currentIndex + 1 }}/{{ total }}</b-nav-item>
+      <b-nav-item disabled>Correct: {{ numOfcorrect }}</b-nav-item>
+    </b-nav>
   </div>
 </template>
 
@@ -9,12 +13,18 @@ import Vue from 'vue'
 
 export default Vue.extend({
   props: {
-    total: { type: Number, required: true },
-    currentIndex: { type: Number, required: true }
+    total: Number,
+    currentIndex: Number,
+    numOfcorrect: {
+      type: Number,
+      default: 0
+    }
   }
 })
 </script>
 
-<style lang="">
-  
+<style>
+.bg-pink {
+  background-color: #FFC0CB;
+}
 </style>
