@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header />
+    <Header :total="total" />
     <b-container class="bv-example-row">
       <b-row>
         <b-col sm="6" offset="3">
@@ -11,11 +11,12 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import Header from './components/Header.vue';
 import Question from './components/Question.vue';
+import Vue from 'vue';
 
-export default {
+export default Vue.extend({
   name: 'App',
   components: {
     Header,
@@ -25,7 +26,7 @@ export default {
     return {
       questions: [],
       index: 0,
-      total: 0,
+      total: 0
     }
   },
   mounted: function(){
@@ -35,7 +36,8 @@ export default {
         this.questions = jsonData.results;
       });
   }
-}
+})
+
 </script>
 
 <style>
