@@ -1,5 +1,7 @@
 # vue-quiz
 
+### My very first Vue App
+
 ## Project setup
 ```
 npm install
